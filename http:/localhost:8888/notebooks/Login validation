@@ -1,0 +1,42 @@
+#this is validating username and password from a dictionary
+
+print("Welcome to AJPY\n\n This community is aimed at helping you be pythonic")
+
+#list of members username and password in a dictionary
+members = {
+    "ayo":"ayo123",
+    "ope": "ope123",
+    "toyo":"toyo123",
+    "mark":"mark1",
+    "chima":"chima123"
+}
+
+#request to take username
+print("please enter username: ")
+username = input()
+if username in members.keys():
+    print("welcome " + username + " kindly enter password below:")
+    password = input()
+    if members[username] == password:
+        print("welcome " + username + ", you will be redirected......")
+    else:
+        print("password is incorrect")
+else:
+    print("you dont have an account yet, would you like to register an account with the user " + username + "\n yes or no?")
+    
+    response = input()
+    response = response.lower()
+    
+    if response == "no":
+        print("We love to have you join us some other time")
+    elif response == "yes":
+        new_user = input('please enter username')
+        print("choose at least six character password")
+        new_password = input()
+        if len(new_password) >= 6:
+            members[new_user] = new_password
+            print("your registration was successful " + new_user)
+        else:
+            print("choose new password")
+       
+        
